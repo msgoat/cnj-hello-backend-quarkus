@@ -4,7 +4,7 @@ Simplest possible cloud native java application based on Quarkus.
 
 ## Status
 
-![Build status](https://drone.cloudtrain.aws.msgoat.eu/api/badges/msgoat/cnj-hello-backend-quarkus/status.svg)
+![Build status](https://codebuild.eu-west-1.amazonaws.com/badges?uuid=eyJlbmNyeXB0ZWREYXRhIjoiQUozNVd6bDdCd1RBQWVubE53OHJUazJyZDkyQmNPdGdRQzcyRGxMUzg4KzhlYjRwUkJaMXF1Y1hMSnl5UzRCdFBYVlh3T0ROY1MzSVgrcjF3OEZwYnY0PSIsIml2UGFyYW1ldGVyU3BlYyI6ImhRc0g3blJMdlpzM3kzMmgiLCJtYXRlcmlhbFNldFNlcmlhbCI6MX0%3D&branch=main)
 
 ## Release Information
 

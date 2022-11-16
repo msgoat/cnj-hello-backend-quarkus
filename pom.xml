@@ -8,14 +8,14 @@
     <description>Simplest possible cloud native Java backend based on Quarkus</description>
     <properties>
         <!-- new Maven version management -->
-        <revision>6.2.0</revision>
+        <revision>7.0.0</revision>
         <sha1></sha1>
         <changelist></changelist>
         <!-- general properties -->
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <!-- runtime related properties -->
-        <java.version>11</java.version>
+        <java.version>17</java.version>
         <quarkus.version>2.14.0.Final</quarkus.version>
         <quarkus.package.type>uber-jar</quarkus.package.type>
         <!-- common logging dependencies -->
@@ -170,6 +170,12 @@
                         <source>${java.version}</source>
                         <target>${java.version}</target>
                         <parameters>true</parameters>
+                        <showDeprecation>true</showDeprecation>
+                        <showWarnings>true</showWarnings>
+                        <compilerArgs>
+                            <arg>-Xlint</arg>
+                            <!-- <arg>-Xdoclint</arg> -->
+                        </compilerArgs>
                     </configuration>
                 </plugin>
                 <plugin>

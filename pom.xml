@@ -8,7 +8,7 @@
     <description>Simplest possible cloud native Java backend based on Quarkus</description>
     <properties>
         <!-- new Maven version management -->
-        <revision>7.0.0</revision>
+        <revision>7.1.0</revision>
         <sha1></sha1>
         <changelist></changelist>
         <!-- general properties -->
@@ -16,7 +16,7 @@
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <!-- runtime related properties -->
         <java.version>17</java.version>
-        <quarkus.version>2.14.0.Final</quarkus.version>
+        <quarkus.version>2.14.1.Final</quarkus.version>
         <quarkus.package.type>uber-jar</quarkus.package.type>
         <!-- common logging dependencies -->
         <slf4j.version>1.7.32</slf4j.version>

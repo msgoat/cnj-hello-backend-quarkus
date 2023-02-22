@@ -13,6 +13,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 - upgraded to Quarkus 2.16.3
 - consolidated all third-party versions with Quarkus versions
+- consolidated usage of cnj-common-test* libraries
 
 ## [7.1.0] - 2022-11-25
 ### Changed

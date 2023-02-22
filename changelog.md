@@ -9,6 +9,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 ### Fixed
 
+## [7.2.0] - 2023-02-22
+### Changed
+- upgraded to Quarkus 2.16.3
+- consolidated all third-party versions with Quarkus versions
+
 ## [7.1.0] - 2022-11-25
 ### Changed
 - upgraded to Quarkus 2.14.1

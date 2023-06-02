@@ -9,6 +9,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 ### Fixed
 
+## [7.3.0] - 2023-06-02
+### Changed
+- upgraded to Quarkus 3.1.0
+- moved from javax to jakarta namespace
+
 ## [7.2.0] - 2023-02-22
 ### Changed
 - upgraded to Quarkus 2.16.3

@@ -9,6 +9,19 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 ### Fixed
 
+## [8.0.0] - 2023-11-30
+### Changed
+- upgraded Quarkus to version 3.5.0
+- upgraded Java to version 21
+- upgraded Maven plugins and dependencies
+- build now packages and pushes Helm charts
+- deploy now uses packaged Helm charts
+- consolidated POM with other showcases
+- consolidated system tests with other showcases
+- build tags git branch after successful completion
+- commit-stage builds produce Docker images for linux/amd64 and linux/arm64/v8 platforms now
+- Docker images use Generational Z garbage collector by default
+
 ## [7.4.0] - 2023-07-05
 ### Changed
 - added explicit dependency to CloudTrain Maven repository to POM to simplify local builds

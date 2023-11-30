@@ -5,6 +5,8 @@ import group.msg.at.cloud.cloudtrain.core.entity.Message;
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.enterprise.context.Dependent;
 import jakarta.transaction.Transactional;
+
+import java.util.Locale;
 import java.util.UUID;
 
 /**
@@ -15,6 +17,10 @@ import java.util.UUID;
 public class HelloWorld {
 
     public Message getHelloMessage() {
-        return new Message(UUID.randomUUID(), "hello", "Welcome to Cloud Native Java with MicroProfile!");
+        Message result = new Message(UUID.randomUUID());
+        result.setCode("hello");
+        result.setText("Welcome to Cloud Native Java with Quarkus!");
+        result.setLocale(Locale.GERMAN);
+        return result;
     }
 }

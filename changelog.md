@@ -9,6 +9,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 ### Fixed
 
+## [8.2.0] - 2024-01-09
+### Added
+- added new unit-test class MessageTest to make sure Jacoco measures test coverage correctly
+### Fixed
+- improved test coverage measurement with Jacoco to include all coverage data in reports
+
 ## [8.1.0] - 2023-12-29
 ### Changed
 - simplified POM

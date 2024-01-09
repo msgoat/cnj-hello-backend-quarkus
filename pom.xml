@@ -8,7 +8,7 @@
     <description>Simplest possible cloud native Java backend based on Quarkus</description>
     <properties>
         <!-- new Maven version management -->
-        <revision>8.1.0</revision>
+        <revision>8.2.0</revision>
         <sha1>.12345678</sha1>
         <changelist>.LOCAL</changelist>
         <!-- common properties -->
@@ -341,6 +341,9 @@
                     <excludes>
                         <exclude>**/*SystemTest.java</exclude>
                     </excludes>
+                    <systemPropertyVariables>
+                        <java.util.logging.manager>org.jboss.logmanager.LogManager</java.util.logging.manager>
+                    </systemPropertyVariables>
                 </configuration>
             </plugin>
             <plugin>
@@ -501,12 +504,14 @@
                         <goals>
                             <goal>prepare-agent</goal>
                         </goals>
+                        <phase>initialize</phase>
                     </execution>
                     <execution>
                         <id>prepare-agent-for-system-tests</id>
                         <goals>
                             <goal>prepare-agent-integration</goal>
                         </goals>
+                        <phase>pre-integration-test</phase>
                     </execution>
                     <execution>
                         <id>pull-jacoco-data-from-container</id>
@@ -516,13 +521,23 @@
                         <phase>integration-test</phase>
                     </execution>
                     <execution>
-                        <id>generate-report</id>
+                        <id>generate-report-unit-tests</id>
                         <goals>
                             <goal>report</goal>
                         </goals>
                         <phase>verify</phase>
                     </execution>
+                    <execution>
+                        <id>generate-report-system-tests</id>
+                        <goals>
+                            <goal>report-integration</goal>
+                        </goals>
+                        <phase>verify</phase>
+                    </execution>
                 </executions>
+                <configuration>
+                    <formats>XML</formats>
+                </configuration>
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -555,17 +570,17 @@
                 <artifactId>helm-maven-plugin</artifactId>
                 <executions>
                     <execution>
+                        <id>helm-lint</id>
+                        <phase>prepare-package</phase>
+                        <goals>
+                            <goal>lint</goal>
+                        </goals>
+                    </execution>
+                    <execution>
                         <id>helm-package</id>
                         <phase>package</phase>
                         <goals>
                             <goal>package</goal>
-                        </goals>
-                    </execution>
-                    <execution>
-                        <id>helm-lint</id>
-                        <phase>verify</phase>
-                        <goals>
-                            <goal>lint</goal>
                         </goals>
                     </execution>
                     <execution>
@@ -607,9 +622,9 @@
                     </execution>
                 </executions>
                 <configuration>
-                    <failOnError>false </failOnError>
+                    <failOnError>false</failOnError>
                     <nvdApiServerId>nist-nvd</nvdApiServerId>
-                    <format>HTML,JSON</format>
+                    <formats>HTML,JSON</formats>
                 </configuration>
             </plugin>
             <plugin>
@@ -686,7 +701,6 @@
                 <docker.skip>true</docker.skip>
                 <dependency-check.skip>true</dependency-check.skip>
                 <jacoco.skip>true</jacoco.skip>
-                <spring-boot.repackage.skip>true</spring-boot.repackage.skip>
             </properties>
             <build>
                 <plugins>

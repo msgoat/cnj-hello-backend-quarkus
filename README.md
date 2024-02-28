@@ -2,6 +2,10 @@
 
 Simplest possible cloud native java application based on Quarkus.
 
+The application is packaged as a multi-architecture docker image which supports the following platforms:
+* linux/amd64
+* linux/arm64/v8
+
 ## Status
 
 ![Build status](https://codebuild.eu-west-1.amazonaws.com/badges?uuid=eyJlbmNyeXB0ZWREYXRhIjoiQUozNVd6bDdCd1RBQWVubE53OHJUazJyZDkyQmNPdGdRQzcyRGxMUzg4KzhlYjRwUkJaMXF1Y1hMSnl5UzRCdFBYVlh3T0ROY1MzSVgrcjF3OEZwYnY0PSIsIml2UGFyYW1ldGVyU3BlYyI6ImhRc0g3blJMdlpzM3kzMmgiLCJtYXRlcmlhbFNldFNlcmlhbCI6MX0%3D&branch=main)
@@ -13,6 +17,10 @@ A changelog can be found in [changelog.md](changelog.md).
 ## Docker Pull Command
 
 `docker pull docker.cloudtrain.aws.msgoat.eu/cloudtrain/cnj-hello-backend-quarkus`
+
+## Helm Pull Command
+
+`helm pull oci://docker.cloudtrain.aws.msgoat.eu/cloudtrain-charts/cnj-hello-backend-quarkus`
 
 ## HOW-TO build this application locally
 
